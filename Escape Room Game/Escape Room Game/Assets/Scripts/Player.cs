@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Camera mainCamera;
-    public Camera secondaryCamera;
-
     private Rigidbody2D rb;
     public static bool buttonOTronInteract = false;
     public static bool powerLevelInteract = false;
     public static bool powerSwitchInteract = false;
     public bool isSprinting = false;
     public float sprintEnergy = 5f;
-    public bool camSwitch = false;
-
+ 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        mainCamera.enabled = true;
-        secondaryCamera.enabled = false;
     }
 
     // Update is called once per frame
@@ -97,13 +90,6 @@ public class Player : MonoBehaviour
             {
                 sprintEnergy += Time.deltaTime;
             }
-        }
-
-        if (Input.GetKey(KeyCode.C))
-        {
-            camSwitch = !camSwitch;
-            mainCamera.gameObject.SetActive(camSwitch);
-            secondaryCamera.gameObject.SetActive(!camSwitch);
         }
     }
 

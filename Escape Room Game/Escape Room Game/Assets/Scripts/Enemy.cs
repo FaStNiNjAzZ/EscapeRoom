@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     public Transform target;//set target from inspector instead of looking in Update
-    public float speed = 3f;
+    public float speed = 5f;
     public bool seePlayerCheck = false;
     public GameObject gameOverScreen;
 

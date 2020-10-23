@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Camera mainCamera;
+    public Camera secondaryCamera;
+
     private Rigidbody2D rb;
     public static bool buttonOTronInteract = false;
     public static bool powerLevelInteract = false;
+    public static bool powerSwitchInteract = false;
+    public bool isSprinting = false;
+    public float sprintEnergy = 5f;
+    public bool camSwitch = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        mainCamera.enabled = true;
+        secondaryCamera.enabled = false;
     }
 
     // Update is called once per frame
@@ -19,22 +29,81 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * 5);
+            if (isSprinting == false)
+            {
+                transform.Translate(Vector3.right * Time.deltaTime * 5);
+            }
+            if (isSprinting == true)
+            {
+                transform.Translate(Vector3.right * Time.deltaTime * 10);
+            }
+            
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * 5);
+            if (isSprinting == false)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * 5);
+            }
+            if (isSprinting == true)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * 10);
+            }
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(Vector3.up * Time.deltaTime * 5);
+            if (isSprinting == false)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * 5);
+            }
+            if (isSprinting == true)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * 10);
+            }
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(Vector3.down * Time.deltaTime * 5);
+            if (isSprinting == false)
+            {
+                transform.Translate(Vector3.down * Time.deltaTime * 5);
+            }
+            if (isSprinting == true)
+            {
+                transform.Translate(Vector3.down * Time.deltaTime * 10);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (sprintEnergy > 0)
+            {
+                sprintEnergy -= Time.deltaTime * 2;
+                isSprinting = true;
+            }
+            if (sprintEnergy <= 0)
+            {
+                sprintEnergy += Time.deltaTime;
+                isSprinting = false;
+            }
+        }
+
+        if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            isSprinting = false;
+            if (sprintEnergy < 5)
+            {
+                sprintEnergy += Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKey(KeyCode.C))
+        {
+            camSwitch = !camSwitch;
+            mainCamera.gameObject.SetActive(camSwitch);
+            secondaryCamera.gameObject.SetActive(!camSwitch);
         }
     }
 
@@ -49,6 +118,11 @@ public class Player : MonoBehaviour
         {
             powerLevelInteract = true;
         }
+
+        if (collision.gameObject.tag == "PowerSwitchTrigger")
+        {
+            powerSwitchInteract = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -61,6 +135,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "PowerLevelTrigger")
         {
             powerLevelInteract = false;
+        }
+
+        if (collision.gameObject.tag == "PowerSwitchTrigger")
+        {
+            powerSwitchInteract = false;
         }
     }
 }

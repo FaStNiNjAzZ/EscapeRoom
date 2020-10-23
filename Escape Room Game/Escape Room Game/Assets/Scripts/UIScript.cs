@@ -6,6 +6,7 @@ public class UIScript : MonoBehaviour
 {
     public GameObject buttonOTronCanvas;
     public GameObject powerLevelCanvas;
+    public GameObject powerSwitchCanvas;
 
     bool checkCanvas = false;
     
@@ -26,6 +27,13 @@ public class UIScript : MonoBehaviour
                 checkCanvas = true;
                 Debug.Log("ok cunt");
             }
+
+            if (Player.powerSwitchInteract == true)
+            {
+                powerSwitchCanvas.SetActive(true);
+                checkCanvas = true;
+                Debug.Log("ok cunt");
+            }
         }
 
         
@@ -37,6 +45,7 @@ public class UIScript : MonoBehaviour
         {
             buttonOTronCanvas.SetActive(false);
             powerLevelCanvas.SetActive(false);
+            powerSwitchCanvas.SetActive(false);
             checkCanvas = false;
             Debug.Log("ok cunt2");
         }
@@ -52,6 +61,11 @@ public class UIScript : MonoBehaviour
         if (Player.powerLevelInteract == false)
         {
             powerLevelCanvas.SetActive(false);
+        }
+
+        if (Player.powerSwitchInteract == false)
+        {
+            powerSwitchCanvas.SetActive(false);
         }
     }
 

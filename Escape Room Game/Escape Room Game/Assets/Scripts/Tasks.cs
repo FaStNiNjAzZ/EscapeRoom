@@ -73,6 +73,10 @@ public class Tasks : MonoBehaviour
             powerSwitchTaskCompleted = false;
         }
 
+        if (powerLevelTaskCompleted == true && powerSwitchTaskCompleted == true && buttonOTronButtonTaskCompleted)
+        {
+
+        }
 
     }
 

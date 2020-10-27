@@ -68,6 +68,4 @@ public class UIScript : MonoBehaviour
             powerSwitchCanvas.SetActive(false);
         }
     }
-
-
 }

@@ -10,6 +10,11 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("PlayTestMap", LoadSceneMode.Single);
     }
 
+    public void MainMenuScene()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
+
     public void Quit()
     {
         Application.Quit();

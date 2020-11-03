@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public static bool buttonOTronInteract = false;
     public static bool powerLevelInteract = false;
     public static bool powerSwitchInteract = false;
+    public static bool shieldInteract = false;
     public bool isSprinting = false;
     public float sprintEnergy = 5f;
  
@@ -109,6 +110,11 @@ public class Player : MonoBehaviour
         {
             powerSwitchInteract = true;
         }
+
+        if (collision.gameObject.tag == "ShieldTrigger")
+        {
+            shieldInteract = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -126,6 +132,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "PowerSwitchTrigger")
         {
             powerSwitchInteract = false;
+        }
+
+        if (collision.gameObject.tag == "ShieldTrigger")
+        {
+            shieldInteract = false;
         }
     }
 }

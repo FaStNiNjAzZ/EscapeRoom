@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Tasks : MonoBehaviour
 {
     //Game Objects
+    //Objects relating to button o tron
     public GameObject buttonOTronButtonGameObject1;
     public GameObject buttonOTronButtonGameObject2;
     public GameObject buttonOTronButtonGameObject3;
@@ -14,30 +15,41 @@ public class Tasks : MonoBehaviour
     public GameObject tickTask1;
     public GameObject crossTask1;
 
-
+    //Objects relating to power level
     public Slider powerLevelSlider;
 
     public GameObject tickTask2;
     public GameObject crossTask2;
 
-
+    //Objects relating to power switches
     public Slider powerSwitchSlider;
     public GameObject powerSwitchonOffIndicator;
 
     public GameObject tickTask3;
     public GameObject crossTask3;
 
+    //Objects relating to shield activation
+    public GameObject shieldButton;
+
+    public GameObject tickTask4;
+    public GameObject crossTask4;
+
 
     //Variables
+    //Variables relating to button o tron
     bool buttonOTronButtonPressed1 = false;
     bool buttonOTronButtonPressed2 = false;
     bool buttonOTronButtonPressed3 = false;
     bool buttonOTronButtonTaskCompleted = false;
 
+    //Variables relating to power level
     bool powerLevelTaskCompleted = false;
 
+    //Variables relating to power switch
     bool powerSwitchTaskCompleted = false;
-    //float powerLevelValue = powerLevelSlider.value;
+
+    //Variables relating to shield button
+    bool shieldTaskCompleted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +60,7 @@ public class Tasks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //If statements for button o tron
         if (buttonOTronButtonPressed1 == true && buttonOTronButtonPressed2 == true && buttonOTronButtonPressed3 == true)
         {
             buttonOTronButtonTaskCompleted = true;
@@ -55,6 +68,7 @@ public class Tasks : MonoBehaviour
             crossTask1.SetActive(false);
         }
 
+        //If statements for power switch
         if (powerSwitchSlider.value == 1f)
         {
 
@@ -64,7 +78,7 @@ public class Tasks : MonoBehaviour
             powerSwitchTaskCompleted = true;
         }
 
-        if (powerSwitchSlider.value == 0f)
+        else //if (powerSwitchSlider.value != 1f)
         {
 
             tickTask3.SetActive(false);
@@ -73,7 +87,8 @@ public class Tasks : MonoBehaviour
             powerSwitchTaskCompleted = false;
         }
 
-        if (powerLevelTaskCompleted == true && powerSwitchTaskCompleted == true && buttonOTronButtonTaskCompleted)
+        //If statements to check if the player has done all the tasks
+        if (powerLevelTaskCompleted == true && powerSwitchTaskCompleted == true && buttonOTronButtonTaskCompleted == true && shieldTaskCompleted == true)
         {
 
         }
@@ -97,6 +112,14 @@ public class Tasks : MonoBehaviour
     {
         buttonOTronButtonPressed3 = true;
         buttonOTronButtonGameObject3.GetComponent<Image>().color = Color.green;
+    }
+
+    public void TurnOffShieldButton()
+    {
+        shieldTaskCompleted = true;
+        shieldButton.GetComponent<Image>().color = Color.red;
+        tickTask4.SetActive(true);
+        crossTask4.SetActive(false);
     }
 
     //Power Level

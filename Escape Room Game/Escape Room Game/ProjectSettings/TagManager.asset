@@ -8,6 +8,7 @@ TagManager:
   - PowerLevelTrigger
   - PowerSwitchTrigger
   - Secondary Camera
+  - ShieldTrigger
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     public static bool canLeaveExitDoor = false;
     public bool isSprinting = false;
     public float sprintEnergy = 5f;
+    public Slider sprintBar;
  
     // Start is called before the first frame update
     void Start()
@@ -94,6 +96,7 @@ public class Player : MonoBehaviour
                 sprintEnergy += Time.deltaTime;
             }
         }
+        sprintBar.value = sprintEnergy;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

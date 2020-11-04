@@ -9,6 +9,8 @@ TagManager:
   - PowerSwitchTrigger
   - Secondary Camera
   - ShieldTrigger
+  - TractorBeamTrigger
+  - ExitDoorTrigger
   layers:
   - Default
   - TransparentFX

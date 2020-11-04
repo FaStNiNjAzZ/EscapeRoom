@@ -34,8 +34,18 @@ public class Tasks : MonoBehaviour
     public GameObject tickTask4;
     public GameObject crossTask4;
 
+    //Objects relating to tractor beam
+    public Slider tractorBeam;
+
+    public GameObject tractorBeamLight;
+
+    public GameObject tickTask5;
+    public GameObject crossTask5;
+
 
     //Variables
+    public static bool allTasksCompleted = false;
+
     //Variables relating to button o tron
     bool buttonOTronButtonPressed1 = false;
     bool buttonOTronButtonPressed2 = false;
@@ -50,6 +60,24 @@ public class Tasks : MonoBehaviour
 
     //Variables relating to shield button
     bool shieldTaskCompleted = false;
+
+    //Variables relating to keypad
+    bool keypadButton1 = false;
+    bool keypadButton2 = false;
+    bool keypadButton3 = false;
+    bool keypadButton4 = false;
+    bool keypadButton5 = false;
+    bool keypadButton6 = false;
+    bool keypadButton7 = false;
+    bool keypadButton8 = false;
+    bool keypadButton9 = false;
+    bool keypadButtonEnter = false;
+
+    int keypadCounter = 0;
+
+    bool keypadComplete = false;
+
+    bool tractorBeamTaskComplete = false;
 
     // Start is called before the first frame update
     void Start()
@@ -88,11 +116,32 @@ public class Tasks : MonoBehaviour
         }
 
         //If statements to check if the player has done all the tasks
-        if (powerLevelTaskCompleted == true && powerSwitchTaskCompleted == true && buttonOTronButtonTaskCompleted == true && shieldTaskCompleted == true)
+        if (powerLevelTaskCompleted == true && powerSwitchTaskCompleted == true && buttonOTronButtonTaskCompleted == true && shieldTaskCompleted == true && tractorBeamTaskComplete == true)
         {
-
+            allTasksCompleted = true;
         }
 
+
+        //debug stuff
+        if (Input.GetKey(KeyCode.O))
+        {
+            powerLevelTaskCompleted = true;
+            powerSwitchTaskCompleted = true;
+            buttonOTronButtonTaskCompleted = true;
+            shieldTaskCompleted = true;
+            tractorBeamTaskComplete = true;
+            tickTask1.SetActive(true);
+            crossTask1.SetActive(false);
+            tickTask2.SetActive(true);
+            crossTask2.SetActive(false);
+            tickTask3.SetActive(true);
+            crossTask3.SetActive(false);
+            tickTask4.SetActive(true);
+            crossTask4.SetActive(false);
+            tickTask5.SetActive(true);
+            crossTask5.SetActive(false);
+            powerSwitchSlider.value = 1f;
+        }
     }
 
     //Button-O-Tron Task script
@@ -130,6 +179,96 @@ public class Tasks : MonoBehaviour
             tickTask2.SetActive(true);
             crossTask2.SetActive(false);
             powerLevelTaskCompleted = true;
+        }
+    }
+
+    //keypad code
+    public void KeypadButton1()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton1 = true;
+        } 
+    }
+    public void KeypadButton2()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton2 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButton3()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton3 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButton4()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton4 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButton5()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton5 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButton6()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton6 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButton7()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton7 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButton8()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton8 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButton9()
+    {
+        if (keypadCounter <= 4)
+        {
+            keypadButton9 = true;
+            keypadCounter += 1;
+        }
+    }
+    public void KeypadButtonEnter()
+    {
+        if (keypadButton2 == true && keypadButton7 == true && keypadButton4 == true && keypadButton1 == true)
+        {
+            if(tractorBeam.value == 0)
+            {
+                tractorBeamTaskComplete = true;
+                tickTask5.SetActive(true);
+                crossTask5.SetActive(false);
+                tractorBeamLight.GetComponent<Image>().color = Color.green;
+            } 
+        }
+        else
+        {
+            keypadCounter = 0;
         }
     }
 }

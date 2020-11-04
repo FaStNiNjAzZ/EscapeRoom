@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public static bool powerLevelInteract = false;
     public static bool powerSwitchInteract = false;
     public static bool shieldInteract = false;
+    public static bool tractorBeamInteract = false;
+    public static bool canLeaveExitDoor = false;
     public bool isSprinting = false;
     public float sprintEnergy = 5f;
  
@@ -94,6 +96,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "ExitDoorTrigger")
+        {
+            if (Tasks.allTasksCompleted == true)
+            {
+                canLeaveExitDoor = true;
+                Debug.Log("Exit");
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ButtonOTronTrigger")
@@ -114,6 +128,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ShieldTrigger")
         {
             shieldInteract = true;
+        }
+
+        if (collision.gameObject.tag == "TractorBeamTrigger")
+        {
+            tractorBeamInteract = true;
         }
     }
 
@@ -137,6 +156,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ShieldTrigger")
         {
             shieldInteract = false;
+        }
+
+        if (collision.gameObject.tag == "TractorBeamTrigger")
+        {
+            tractorBeamInteract = false;
         }
     }
 }

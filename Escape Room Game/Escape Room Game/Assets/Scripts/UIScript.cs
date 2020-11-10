@@ -55,6 +55,7 @@ public class UIScript : MonoBehaviour
             if (Player.canLeaveExitDoor == true)
             {
                 gameCompletedCanvas.SetActive(true);
+                Debug.Log(Player.canLeaveExitDoor);
             }
         }
 

@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
             if (Tasks.allTasksCompleted == true)
             {
                 canLeaveExitDoor = true;
-                Debug.Log("Exit");
+                Debug.Log(Tasks.allTasksCompleted);
             }
         }
     }

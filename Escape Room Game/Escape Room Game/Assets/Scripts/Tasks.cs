@@ -15,6 +15,14 @@ public class Tasks : MonoBehaviour
     public GameObject tickTask1;
     public GameObject crossTask1;
 
+    public GameObject buttonOTronLightRed1;
+    public GameObject buttonOTronLightRed2;
+    public GameObject buttonOTronLightRed3;
+
+    public GameObject buttonOTronLightGreen1;
+    public GameObject buttonOTronLightGreen2;
+    public GameObject buttonOTronLightGreen3;
+
     //Objects relating to power level
     public Slider powerLevelSlider;
 
@@ -25,6 +33,9 @@ public class Tasks : MonoBehaviour
     public Slider powerSwitchSlider;
     public GameObject powerSwitchonOffIndicator;
 
+    public GameObject redLightPS;
+    public GameObject greenLightPS;
+
     public GameObject tickTask3;
     public GameObject crossTask3;
 
@@ -34,10 +45,16 @@ public class Tasks : MonoBehaviour
     public GameObject tickTask4;
     public GameObject crossTask4;
 
+    public GameObject redLightS;
+    public GameObject greenLightS;
+
     //Objects relating to tractor beam
     public Slider tractorBeam;
 
     public GameObject tractorBeamLight;
+
+    public GameObject redLightTB;
+    public GameObject greenLightTB;
 
     public GameObject tickTask5;
     public GameObject crossTask5;
@@ -102,8 +119,10 @@ public class Tasks : MonoBehaviour
 
             tickTask3.SetActive(true);
             crossTask3.SetActive(false);
-            powerSwitchonOffIndicator.GetComponent<Image>().color = Color.green;
+            //powerSwitchonOffIndicator.GetComponent<Image>().color = Color.green;
             powerSwitchTaskCompleted = true;
+            redLightPS.SetActive(false);
+            greenLightPS.SetActive(true);
         }
 
         else //if (powerSwitchSlider.value != 1f)
@@ -111,8 +130,10 @@ public class Tasks : MonoBehaviour
 
             tickTask3.SetActive(false);
             crossTask3.SetActive(true);
-            powerSwitchonOffIndicator.GetComponent<Image>().color = Color.red;
+            //powerSwitchonOffIndicator.GetComponent<Image>().color = Color.red;
             powerSwitchTaskCompleted = false;
+            redLightPS.SetActive(true);
+            greenLightPS.SetActive(false);
         }
 
         //If statements to check if the player has done all the tasks
@@ -149,18 +170,24 @@ public class Tasks : MonoBehaviour
     {
         buttonOTronButtonPressed1 = true;
         buttonOTronButtonGameObject1.GetComponent<Image>().color = Color.green;
+        buttonOTronLightRed1.SetActive(false);
+        buttonOTronLightGreen1.SetActive(true);
     }
 
     public void ButtonOTronButton2()
     {
         buttonOTronButtonPressed2 = true;
         buttonOTronButtonGameObject2.GetComponent<Image>().color = Color.green;
+        buttonOTronLightRed2.SetActive(false);
+        buttonOTronLightGreen2.SetActive(true);
     }
 
     public void ButtonOTronButton3()
     {
         buttonOTronButtonPressed3 = true;
         buttonOTronButtonGameObject3.GetComponent<Image>().color = Color.green;
+        buttonOTronLightRed3.SetActive(false);
+        buttonOTronLightGreen3.SetActive(true);
     }
 
     public void TurnOffShieldButton()
@@ -169,6 +196,8 @@ public class Tasks : MonoBehaviour
         shieldButton.GetComponent<Image>().color = Color.red;
         tickTask4.SetActive(true);
         crossTask4.SetActive(false);
+        redLightS.SetActive(false);
+        greenLightS.SetActive(true);
     }
 
     //Power Level
@@ -264,6 +293,8 @@ public class Tasks : MonoBehaviour
                 tickTask5.SetActive(true);
                 crossTask5.SetActive(false);
                 tractorBeamLight.GetComponent<Image>().color = Color.green;
+                redLightTB.SetActive(false);
+                greenLightTB.SetActive(true);
             } 
         }
         else

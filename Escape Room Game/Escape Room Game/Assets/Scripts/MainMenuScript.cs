@@ -5,9 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+
+    //Variables
+    public bool isEasyDifficulty = false;
+    public bool isMediumDifficulty = false;
+    public bool isHardDifficulty = false;
+
+    public GameObject mainMenuCanvas;
+    public GameObject difficultyCanvas;
+
+    void Start()
+    {
+        mainMenuCanvas.SetActive(true);
+        difficultyCanvas.SetActive(false);
+    }
+
     public void PlayTestMap()
     {
-        SceneManager.LoadScene("PlayTestMap", LoadSceneMode.Single);
+        difficultyCanvas.SetActive(true);
+        mainMenuCanvas.SetActive(false);
     }
 
     public void MainMenuScene()
@@ -18,5 +34,23 @@ public class MainMenuScript : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void EasyButton()
+    {
+        CrossSceneVariables.isEasyDifficulty = true;
+        SceneManager.LoadScene("PlayTestMap", LoadSceneMode.Single);
+    }
+
+    public void MediumButton()
+    {
+        CrossSceneVariables.isMediumDifficulty = true;
+        SceneManager.LoadScene("PlayTestMap", LoadSceneMode.Single);
+    }
+
+    public void HardButton()
+    {
+        CrossSceneVariables.isHardDifficulty = true;
+        SceneManager.LoadScene("PlayTestMap", LoadSceneMode.Single);
     }
 }

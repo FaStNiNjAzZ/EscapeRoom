@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public bool isSprinting = false;
     public float sprintEnergy = 5f;
     public Slider sprintBar;
+    bool mainCameraStatus = true;
 
     public GameObject enemy1;
     public GameObject enemy2;
@@ -22,6 +23,9 @@ public class Player : MonoBehaviour
     public GameObject enemy4;
     public GameObject enemy5;
     public GameObject enemy6;
+
+    public GameObject mainCamera;
+    public GameObject mapCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +62,9 @@ public class Player : MonoBehaviour
             enemy5.SetActive(true);
             enemy6.SetActive(true);
         }
+
+        mapCamera.SetActive(false);
+        mainCamera.SetActive(true);
     }
 
     // Update is called once per frame
@@ -140,6 +147,23 @@ public class Player : MonoBehaviour
         {
             enemy1.SetActive(true);
             enemy2.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (mainCameraStatus == false)
+            {
+                mainCamera.SetActive(true);
+                mapCamera.SetActive(false);
+                mainCameraStatus = true;
+            }
+
+            else if (mainCameraStatus == true)
+            {
+                mainCamera.SetActive(false);
+                mapCamera.SetActive(true);
+                mainCameraStatus = false;
+            }
         }
     }
 

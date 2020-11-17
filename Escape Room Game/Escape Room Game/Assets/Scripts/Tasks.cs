@@ -63,6 +63,8 @@ public class Tasks : MonoBehaviour
     //Variables
     public static bool allTasksCompleted = false;
 
+    public bool allTasksCompletedChecker = allTasksCompleted;
+
     //Variables relating to button o tron
     bool buttonOTronButtonPressed1 = false;
     bool buttonOTronButtonPressed2 = false;
@@ -105,6 +107,8 @@ public class Tasks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        allTasksCompletedChecker = allTasksCompleted;
+
         //If statements for button o tron
         if (buttonOTronButtonPressed1 == true && buttonOTronButtonPressed2 == true && buttonOTronButtonPressed3 == true)
         {

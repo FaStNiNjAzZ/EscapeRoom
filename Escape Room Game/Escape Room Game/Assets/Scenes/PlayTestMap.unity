@@ -342,7 +342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843809508}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843809508}
+      - m_Target: {fileID: 0}
         m_MethodName: InteractButton
         m_Mode: 1
         m_Arguments:
@@ -3076,7 +3076,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843809508}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -5170,7 +5170,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843809508}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -6743,7 +6743,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843809508}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -7279,7 +7279,6 @@ GameObject:
   m_Component:
   - component: {fileID: 843809507}
   - component: {fileID: 843809506}
-  - component: {fileID: 843809508}
   - component: {fileID: 843809509}
   m_Layer: 0
   m_Name: Task Scripts
@@ -7346,24 +7345,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &843809508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843809505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a3f0eb37ed299a41be62dc0817b885c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonOTronCanvas: {fileID: 287126509}
-  powerLevelCanvas: {fileID: 963154775}
-  powerSwitchCanvas: {fileID: 2037144223}
-  shieldCanvas: {fileID: 26454162}
-  tractorBeamCanvas: {fileID: 1943686185}
-  gameCompletedCanvas: {fileID: 1476420350}
 --- !u!114 &843809509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9287,7 +9268,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 843809508}
+      - m_Target: {fileID: 0}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:

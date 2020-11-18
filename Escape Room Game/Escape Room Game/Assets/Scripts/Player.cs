@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -80,7 +81,7 @@ public class Player : MonoBehaviour
             {
                 transform.Translate(Vector3.right * Time.deltaTime * 10);
             }
-            
+
         }
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -164,6 +165,11 @@ public class Player : MonoBehaviour
                 mapCamera.SetActive(true);
                 mainCameraStatus = false;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
         }
     }
 

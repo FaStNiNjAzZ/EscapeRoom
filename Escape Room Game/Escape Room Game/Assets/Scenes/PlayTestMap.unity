@@ -254,7 +254,7 @@ RectTransform:
   - {fileID: 781483724}
   - {fileID: 747471005}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 843809508}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -647,7 +647,7 @@ RectTransform:
   - {fileID: 1093898666}
   - {fileID: 1171010066}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 843809508}
         m_MethodName: InteractButton
         m_Mode: 1
         m_Arguments:
@@ -3076,8 +3076,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ExitButton
+      - m_Target: {fileID: 843809505}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3314,7 +3314,7 @@ RectTransform:
   - {fileID: 226511211}
   - {fileID: 972151407}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4399,7 +4399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453867839
 GameObject:
@@ -5170,7 +5170,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 843809508}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -6743,7 +6743,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 843809508}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -7280,6 +7280,7 @@ GameObject:
   - component: {fileID: 843809507}
   - component: {fileID: 843809506}
   - component: {fileID: 843809509}
+  - component: {fileID: 843809508}
   m_Layer: 0
   m_Name: Task Scripts
   m_TagString: Untagged
@@ -7343,8 +7344,26 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &843809508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843809505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd309757f74a3dc4d96f3dbe720c3dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOTronCanvas: {fileID: 287126509}
+  powerLevelCanvas: {fileID: 963154775}
+  powerSwitchCanvas: {fileID: 2037144223}
+  shieldCanvas: {fileID: 26454162}
+  tractorBeamCanvas: {fileID: 1943686185}
+  gameCompletedCanvas: {fileID: 1476420350}
 --- !u!114 &843809509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7914,7 +7933,7 @@ RectTransform:
   - {fileID: 976011468}
   - {fileID: 2032648745}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9268,7 +9287,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 843809508}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -11764,7 +11783,7 @@ RectTransform:
   - {fileID: 177300813}
   - {fileID: 720001944}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13147,7 +13166,7 @@ RectTransform:
   - {fileID: 136896252}
   - {fileID: 234529213}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15837,7 +15856,7 @@ RectTransform:
   - {fileID: 364430808}
   - {fileID: 1245133605}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16939,7 +16958,7 @@ RectTransform:
   - {fileID: 965587173}
   - {fileID: 1727590038}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

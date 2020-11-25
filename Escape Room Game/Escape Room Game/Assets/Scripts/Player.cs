@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public GameObject enemy5;
     public GameObject enemy6;
 
+    public GameObject button;
+
     public GameObject mainCamera;
     public GameObject mapCamera;
 
@@ -190,26 +192,31 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ButtonOTronTrigger")
         {
             buttonOTronInteract = true;
+            button.SetActive(true);
         }
 
         if (collision.gameObject.tag == "PowerLevelTrigger")
         {
             powerLevelInteract = true;
+            button.SetActive(true);
         }
 
         if (collision.gameObject.tag == "PowerSwitchTrigger")
         {
             powerSwitchInteract = true;
+            button.SetActive(true);
         }
 
         if (collision.gameObject.tag == "ShieldTrigger")
         {
             shieldInteract = true;
+            button.SetActive(true);
         }
 
         if (collision.gameObject.tag == "TractorBeamTrigger")
         {
             tractorBeamInteract = true;
+            button.SetActive(true);
         }
     }
 
@@ -218,26 +225,31 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ButtonOTronTrigger")
         {
             buttonOTronInteract = false;
+            button.SetActive(false);
         }
 
         if (collision.gameObject.tag == "PowerLevelTrigger")
         {
             powerLevelInteract = false;
+            button.SetActive(false);
         }
 
         if (collision.gameObject.tag == "PowerSwitchTrigger")
         {
             powerSwitchInteract = false;
+            button.SetActive(false);
         }
 
         if (collision.gameObject.tag == "ShieldTrigger")
         {
             shieldInteract = false;
+            button.SetActive(false);
         }
 
         if (collision.gameObject.tag == "TractorBeamTrigger")
         {
             tractorBeamInteract = false;
+            button.SetActive(false);
         }
     }
 }

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public static bool shieldInteract = false;
     public static bool tractorBeamInteract = false;
     public static bool canLeaveExitDoor = false;
+    public static bool crateInteract = false;
     public bool isSprinting = false;
     public float sprintEnergy = 5f;
     public Slider sprintBar;
@@ -175,18 +176,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "ExitDoorTrigger")
-        {
-            if (Tasks.allTasksCompleted == true)
-            {
-                canLeaveExitDoor = true;
-                Debug.Log(Tasks.allTasksCompleted);
-            }
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ButtonOTronTrigger")
@@ -217,6 +206,22 @@ public class Player : MonoBehaviour
         {
             tractorBeamInteract = true;
             button.SetActive(true);
+        }
+
+        if (collision.gameObject.tag == "Crate")
+        {
+            crateInteract = true;
+            button.SetActive(true);
+        }
+
+        if (collision.gameObject.tag == "ExitDoorTrigger")
+        {
+            if (Tasks.allTasksCompleted == true)
+            {
+                button.SetActive(true);
+                canLeaveExitDoor = true;
+                Debug.Log("allTasksCompleted = " + Tasks.allTasksCompleted);
+            }
         }
     }
 
@@ -250,6 +255,22 @@ public class Player : MonoBehaviour
         {
             tractorBeamInteract = false;
             button.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "Crate")
+        {
+            crateInteract = false;
+            button.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "ExitDoorTrigger")
+        {
+            if (Tasks.allTasksCompleted == true)
+            {
+                button.SetActive(false);
+                canLeaveExitDoor = false;
+                Debug.Log("allTasksCompleted = " + Tasks.allTasksCompleted);
+            }
         }
     }
 }

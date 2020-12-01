@@ -12,6 +12,7 @@ TagManager:
   - TractorBeamTrigger
   - ExitDoorTrigger
   - Don'tDestroyTag
+  - Crate
   layers:
   - Default
   - TransparentFX

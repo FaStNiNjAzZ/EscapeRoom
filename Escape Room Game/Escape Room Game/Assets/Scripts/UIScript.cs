@@ -10,6 +10,7 @@ public class UIScript : MonoBehaviour
     public GameObject shieldCanvas;
     public GameObject tractorBeamCanvas;
     public GameObject gameCompletedCanvas;
+    public GameObject keypadCodeCanvas;
 
     bool checkCanvas = false;
 
@@ -57,6 +58,13 @@ public class UIScript : MonoBehaviour
                 gameCompletedCanvas.SetActive(true);
                 Debug.Log(Player.canLeaveExitDoor);
             }
+
+            if (Player.crateInteract == true)
+            {
+                keypadCodeCanvas.SetActive(true);
+                checkCanvas = true;
+                Debug.Log(Player.crateInteract);
+            }
         }
 
 
@@ -71,6 +79,7 @@ public class UIScript : MonoBehaviour
             powerSwitchCanvas.SetActive(false);
             shieldCanvas.SetActive(false);
             tractorBeamCanvas.SetActive(false);
+            keypadCodeCanvas.SetActive(false);
             checkCanvas = false;
             Debug.Log("ok cunt2");
         }
@@ -83,22 +92,27 @@ public class UIScript : MonoBehaviour
             buttonOTronCanvas.SetActive(false);
         }
 
-        if (Player.powerLevelInteract == false)
+        else if (Player.powerLevelInteract == false)
         {
             powerLevelCanvas.SetActive(false);
         }
 
-        if (Player.powerSwitchInteract == false)
+        else if (Player.powerSwitchInteract == false)
         {
             powerSwitchCanvas.SetActive(false);
         }
 
-        if (Player.shieldInteract == false)
+        else if (Player.shieldInteract == false)
         {
             shieldCanvas.SetActive(false);
         }
 
-        if (Player.tractorBeamInteract == false)
+        else if (Player.tractorBeamInteract == false)
+        {
+            tractorBeamCanvas.SetActive(false);
+        }
+
+        else if (Player.crateInteract == false)
         {
             tractorBeamCanvas.SetActive(false);
         }

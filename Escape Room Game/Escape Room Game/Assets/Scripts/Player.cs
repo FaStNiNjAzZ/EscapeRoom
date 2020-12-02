@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public static bool tractorBeamInteract = false;
     public static bool canLeaveExitDoor = false;
     public static bool crateInteract = false;
+    public static bool cameraInteract = false;
     public bool isSprinting = false;
     public float sprintEnergy = 5f;
     public Slider sprintBar;
@@ -27,6 +28,9 @@ public class Player : MonoBehaviour
     public GameObject enemy6;
 
     public GameObject button;
+
+    public GameObject cameraCanvas;
+    public GameObject gameCanvas;
 
     public GameObject mainCamera;
     public GameObject mapCamera;
@@ -152,8 +156,8 @@ public class Player : MonoBehaviour
             enemy1.SetActive(true);
             enemy2.SetActive(true);
         }
-
-        if (Input.GetKeyDown(KeyCode.C))
+        /*
+        if (UIScript.cameraButtonCheck == true)
         {
             if (mainCameraStatus == false)
             {
@@ -169,7 +173,7 @@ public class Player : MonoBehaviour
                 mainCameraStatus = false;
             }
         }
-
+        */
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
@@ -223,6 +227,13 @@ public class Player : MonoBehaviour
                 Debug.Log("allTasksCompleted = " + Tasks.allTasksCompleted);
             }
         }
+
+        if (collision.gameObject.tag == "CameraTrigger")
+        {
+            cameraInteract = true;
+            button.SetActive(true);
+            Debug.Log(cameraInteract);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -272,5 +283,46 @@ public class Player : MonoBehaviour
                 Debug.Log("allTasksCompleted = " + Tasks.allTasksCompleted);
             }
         }
+
+        if (collision.gameObject.tag == "CameraTrigger")
+        {
+            cameraInteract = false;
+            button.SetActive(false);
+            Debug.Log(cameraInteract);
+            ExitCameraCanvas();
+        }
+    }
+
+    public void CameraButton()
+    { /*
+        if (cameraInteract == false)
+        {
+            if (mainCameraStatus == false)
+            {
+                mainCamera.SetActive(true);
+                mapCamera.SetActive(false);
+                mainCameraStatus = true;
+            }
+        }
+*/
+
+
+        if (cameraInteract == true)
+        {
+            mainCamera.SetActive(false);
+            mapCamera.SetActive(true);
+            gameCanvas.SetActive(false);
+            cameraCanvas.SetActive(true);
+            mainCameraStatus = false;
+        }
+    }
+
+    public void ExitCameraCanvas()
+    {
+        mainCamera.SetActive(true);
+        mapCamera.SetActive(false);
+        gameCanvas.SetActive(true);
+        cameraCanvas.SetActive(false);
+        mainCameraStatus = true;
     }
 }

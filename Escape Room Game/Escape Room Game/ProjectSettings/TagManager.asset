@@ -13,6 +13,7 @@ TagManager:
   - ExitDoorTrigger
   - Don'tDestroyTag
   - Crate
+  - CameraTrigger
   layers:
   - Default
   - TransparentFX

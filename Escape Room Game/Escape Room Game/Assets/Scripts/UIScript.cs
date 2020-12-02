@@ -12,6 +12,8 @@ public class UIScript : MonoBehaviour
     public GameObject gameCompletedCanvas;
     public GameObject keypadCodeCanvas;
 
+    public static bool cameraButtonCheck = false;
+
     bool checkCanvas = false;
 
     public void InteractButton()
@@ -65,9 +67,14 @@ public class UIScript : MonoBehaviour
                 checkCanvas = true;
                 Debug.Log(Player.crateInteract);
             }
+
+            if (Player.cameraInteract == true)
+            {
+                cameraButtonCheck = true;
+                checkCanvas = true;
+                Debug.Log(Player.cameraInteract);
+            }
         }
-
-
     }
 
     public void ExitButton()
@@ -80,6 +87,7 @@ public class UIScript : MonoBehaviour
             shieldCanvas.SetActive(false);
             tractorBeamCanvas.SetActive(false);
             keypadCodeCanvas.SetActive(false);
+            cameraButtonCheck = false;
             checkCanvas = false;
             Debug.Log("ok cunt2");
         }
@@ -115,6 +123,11 @@ public class UIScript : MonoBehaviour
         else if (Player.crateInteract == false)
         {
             tractorBeamCanvas.SetActive(false);
+        }
+
+        else if (Player.cameraInteract == false)
+        {
+            cameraButtonCheck = false;
         }
     }
 }

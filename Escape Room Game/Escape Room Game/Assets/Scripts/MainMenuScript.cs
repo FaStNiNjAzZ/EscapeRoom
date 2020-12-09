@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
@@ -22,6 +23,8 @@ public class MainMenuScript : MonoBehaviour
         difficultyCanvas1.SetActive(false);
     }
 
+    
+
     public void PlayTestMap()
     {
         difficultyCanvas1.SetActive(true);
@@ -36,7 +39,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void MainMenuScene()
     {
-        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("Menu", LoadSceneMode.Single);
     }
 
     public void Quit()
@@ -47,19 +50,19 @@ public class MainMenuScript : MonoBehaviour
     public void EasyButton()
     {
         CrossSceneVariables.isEasyDifficulty = true;
-        SceneManager.LoadScene("PrisonMap", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("PrisonMap", LoadSceneMode.Single);
     }
 
     public void MediumButton()
     {
         CrossSceneVariables.isMediumDifficulty = true;
-        SceneManager.LoadScene("PrisonMap", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("PrisonMap", LoadSceneMode.Single);
     }
 
     public void HardButton()
     {
         CrossSceneVariables.isHardDifficulty = true;
-        SceneManager.LoadScene("PrisonMap", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("PrisonMap", LoadSceneMode.Single);
     }
 
     public void EasyButton1()

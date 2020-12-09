@@ -324,5 +324,6 @@ public class Player : MonoBehaviour
         gameCanvas.SetActive(true);
         cameraCanvas.SetActive(false);
         mainCameraStatus = true;
+        UIScript.checkCanvas = false;
     }
 }

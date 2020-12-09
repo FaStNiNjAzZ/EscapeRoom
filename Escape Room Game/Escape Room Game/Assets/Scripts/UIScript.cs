@@ -14,7 +14,7 @@ public class UIScript : MonoBehaviour
 
     public static bool cameraButtonCheck = false;
 
-    bool checkCanvas = false;
+    public static bool checkCanvas = false;
 
     public void InteractButton()
     {
